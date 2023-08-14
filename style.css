@@ -6,7 +6,7 @@
 
 /*configurações padrão, dark mode*/
 :root {
-  --text-color: white;
+  --text-color: rgb(255, 1, 1);
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
