@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /*medida do tamanho da caixa, para que seja medida atravez da borda*/
+}
+
+/*configurações padrão, dark mode*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(255, 255, 255, 0.05);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+/*configurações light mode*/
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+
+  background-repeat: no-repeat; faz com que a imagem nao repita
+
+  background-position: top center; posiçao (x y) vertical horizontal
+
+  background-size: cover;
+  coloca a imagem na tela interia, ajustando para o tamanho da tela
+  */
+
+  /*
+  background: color image repeat position/size ...;
+  */
+  background: var(--bg-url) no-repeat top center/cover;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+  width: 360px;
+  margin: auto;
+  padding: 0 24px; /*em cima e em baixo 0px e nas laterais 24px*/
+  margin-top: 56px; /* ou  padding-top: 56px;nesse caso!*/
+
+  /*EXEMPLOS DE COMO FUNCIONA O MARGIN
+
+  SEQUENCIA!!!
+
+  margin: auto;          margin: 1px 2px;     margin: 1px 2px 3px ;   margin: 1px 2px 3px 4PX; 
+
+  Como se fosse:
+
+  margin-top: auto;      margin-top: 1px;      margin-top: 1px;         margin-top: 1px;
+  margin-right: auto;    margin-right: 2px;    margin-right: 2px;       margin-right: 2px;
+  margin-bottom: auto;   margin-bottom: 1px;   margin-bottom: 3px;       margin-bottom: 3px;
+  margin-left: auto;     margin-left: 2px;     margin-left: 2px;        margin-left: 4px;
+
+  */
+}
+
+/*profile*/
+#profile {
+  text-align: center; /*para alinhar a img pois ela é display in line*/
+  padding: 24px; /*preenchimento interno*/
+}
+
+#profile img {
+  width: 112px;
+  border-radius: 60px;
+  /*margin: auto; na estrutura display inline nao funciona o margin*/
+}
+
+#profile p {
+  font-weight: 500; /*deixa a letra mais grossa, negrito*/
+  line-height: 24px; /*altura da linha*/
+  margin-top: 8px; /*margem entre a escrita e a foto*/
+}
+
+/*switch*/
+#switch {
+  width: 64px;
+  position: relative; /* faz com que o position:absolute; fique absoluto dentro do switch apenas e nao na tela inteira*/
+
+  margin: 0 auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  /*explicação no video: masterizando alinhamento*/
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.light #switch button {
+  right: 0;
+  left: initial; /*faz mudar o lado do icone*/
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+/* links */
+ul {
+  list-style: none; /*tira op . da lista */
+
+  display: flex; /*organisa de uma forma flexivel*/
+  flex-direction: column; /*Deixa os elementos em coluna*/
+  gap: 16px; /*expaço entre os elementos, que nesse caso são as listas*/
+
+  padding: 24px 0;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center; /*Pegou o conteudo e coloca no meio. so funciona no flex, no display: block; é text-align: center;*/
+
+  padding: 16px 24px;
+
+  /*
+  (red, green, blue, alpha)'transparencia'
+   255 cor mais forte (branco)0 cor mais fraca(preto)
+  */
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(
+    4px
+  ); /*-webkit- em alguns browsers precisam, como saber se precisa? pesquisa no site caniuse.com*/
+
+  text-decoration: none;
+  font-weight: 500;
+
+  transition: background 0.2s; /*transiçao da cor do back ground, ligado com o hover*/
+}
+
+/*pseudo-selector, quando o mouse passar por cima*/
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/*social links*/
+#social-links {
+  display: flex;
+  justify-content: center;
+
+  padding: 24px 0;
+
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /*tudo isso para deixar o icone no centro */
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background-color: var(--highlight-color);
+  padding: 16px;
+}
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+  font-size: 14px;
+}
