@@ -3,10 +3,10 @@
   padding: 0;
   box-sizing: border-box; /*medida do tamanho da caixa, para que seja medida atravez da borda*/
 }
-
+fwwewf
 /*configurações padrão, dark mode*/
 :root {
-  --text-color: rgb(255, 1, 1);
+  --text-color: white;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
