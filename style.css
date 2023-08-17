@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box; /*medida do tamanho da caixa, para que seja medida atravez da borda*/
 }
-fwwewf
+
 /*configurações padrão, dark mode*/
 :root {
   --text-color: white;
@@ -50,7 +50,8 @@ body * {
 }
 
 #container {
-  width: 360px;
+  width: 100%px;
+  max-width: 588px;
   margin: auto;
   padding: 0 24px; /*em cima e em baixo 0px e nas laterais 24px*/
   margin-top: 56px; /* ou  padding-top: 56px;nesse caso!*/
