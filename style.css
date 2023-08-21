@@ -7,6 +7,7 @@
 /*configurações padrão, dark mode*/
 :root {
   --text-color: white;
+  --bg-color: black;
   --bg-url: url(./assets/bg-mobile.jpg);
   --stroke-color: rgba(255, 255, 255, 0.5);
   --surface-color: rgba(255, 255, 255, 0.1);
@@ -18,6 +19,7 @@
 /*configurações light mode*/
 .light {
   --text-color: black;
+  --bg-color: white;
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
@@ -27,7 +29,7 @@
 }
 
 body {
-  background: var(--bg-url) no-repeat top center/cover;
+  background:var(--bg-color) var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 
   /*
