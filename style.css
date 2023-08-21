@@ -29,7 +29,7 @@
 }
 
 body {
-  background:var(--bg-color) var(--bg-url) no-repeat top center/cover;
+  background: var(--bg-color) var(--bg-url) no-repeat top center/cover;
   height: 100vh;
 
   /*
