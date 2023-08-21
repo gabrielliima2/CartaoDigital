@@ -19,10 +19,10 @@ function toggleMode() {
   //substituir a imagem
   if (html.classList.contains("light")) {
     // se tiver light mode , adicionar img light
-    img.setAttribute("src", "https://twitter.com/GabrielLiima24.jpg")
-    img.setAttribute("alt", "foto do insta")
+    img.setAttribute("src", "./assets/avatar-light.png")
+    img.setAttribute("alt", "retrado de gabriel sorrindo com o fundo amarelo")
   } else {
     //se tiver sem light mode, manter a img normal
-    img.setAttribute("src", "https://github.com/gabrielliima2.png")
+    img.setAttribute("src", "./assets/avatar.png")
   }
 }
